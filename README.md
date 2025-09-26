@@ -15,31 +15,46 @@ Practice specialized collection operations with powerful C# collections:
 
 ## How to Complete This Exercise
 
-### Step 1: Implement Method Logic
-First, scroll to the bottom of the file and implement the method:
+### Step 1: Create Collections in Main
+First, in the Main method, create your collection variables:
 
 ```csharp
-private static HashSet<string> CreateHashSet()
+Console.WriteLine("*** HASHSET ***");
+Console.WriteLine("=".PadRight(60, '='));
+Console.WriteLine("Stores unique items only, automatically prevents duplicates");
+
+// TODO: Create a HashSet with initial data (professional approach)
+// Example: HashSet<string> uniqueNames = new HashSet<string> {"John", "Jane", "John", "Mike"};
+HashSet<string> uniqueNames = new HashSet<string> {"John", "Jane", "John", "Mike"};
+```
+
+### Step 2: Implement Methods
+Scroll down to "START METHODS HERE" and implement the methods:
+
+```csharp
+private static void DisplayHashSet(HashSet<string> uniqueNames)
 {
-    // TODO: Create a HashSet of strings (automatically prevents duplicates)
-    // Example: HashSet<string> uniqueNames = new HashSet<string>();
-    // Then return uniqueNames;
+    // TODO: Print all unique names using a foreach loop
+    Console.WriteLine("Unique Names, no duplicates: ");
     
-    return null; // Replace this line with your implementation
+    foreach (string name in uniqueNames)
+    {
+        Console.WriteLine(name);
+    }
 }
 ```
 
-### Step 2: Call the Method in Main
-Back in the Main method, you'll see TODOs like:
+### Step 3: Call Methods in Main
+Back in Main, call your implemented methods:
 
 ```csharp
-Console.WriteLine("\n1. HASHSET CREATE:");
-// TODO 17: Call CreateHashSet() method and store result in a variable
-var uniqueNames = CreateHashSet();
+Console.WriteLine("\n2. HASHSET DISPLAY:");
+// TODO: Call DisplayHashSet() method and pass the HashSet
+DisplayHashSet(uniqueNames);
 ```
 
-### Step 3: Test Your Work
-- Run the program after implementing each method
+### Step 4: Test Your Work
+- Run the program after implementing each section
 - Watch how each collection behaves differently
 - Each operation has clear console labels to show progress
 
@@ -82,12 +97,14 @@ var uniqueNames = CreateHashSet();
 
 ## Tips for Success
 
-1. **Complete in Order**: HashSet → Stack → Queue → SortedList
-2. **Test Frequently**: Run the program after each method implementation
-3. **Watch the Behavior**: Notice how each collection handles data differently
-4. **Use the Reference**: Scroll to bottom of Program.cs for complete method lists
-5. **Understand the Why**: Learn when each collection type is most useful
-6. **Experiment**: Try adding the same item twice to HashSet, or reversing Stack/Queue operations
+1. **Follow the Workflow**: Create collections in Main → Implement methods → Call methods → Test
+2. **Complete in Order**: HashSet → Stack → Queue → SortedList
+3. **Test Frequently**: Run the program after implementing each method
+4. **Watch the Behavior**: Notice how each collection handles data differently
+5. **Use Professional Patterns**: Create collections with initial data, pass to methods via parameters
+6. **Use the Reference**: Scroll to bottom of Program.cs for complete method lists
+7. **Understand the Why**: Learn when each collection type is most useful
+8. **Experiment**: Try adding the same item twice to HashSet, or reversing Stack/Queue operations
 
 ## Collection Comparison Quick Reference
 
