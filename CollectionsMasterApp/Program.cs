@@ -33,22 +33,26 @@ namespace CollectionsMasterApp
             // 🔽 SCROLL DOWN TO THE METHODS SECTION FIRST! 🔽
             // 📍 Look for "START HERE" comment below to implement methods FIRST
             // Then come back here to call your implemented methods
+            
             #region HashSet
             Console.WriteLine("*** HASHSET ***");
             Console.WriteLine("=".PadRight(60, '='));
             Console.WriteLine("Stores unique items only, automatically prevents duplicates");
 
-            Console.WriteLine("\n1. HASHSET CREATE:");
-            // TODO 17: Call CreateHashSet() method and store result in a variable
-            // Implement the CreateHashSet() method at bottom of file
+            Console.WriteLine("\n1. HASHSET CREATE & ADD:");
+            // TODO: Create a HashSet with initial data (professional approach)
+            // Example: var uniqueNames = new HashSet<string> {"John", "Jane", "John", "Mike"};
+            var uniqueNames = new HashSet<string> {"John", "Jane", "John", "Mike"};
             
-            Console.WriteLine("\n2. HASHSET ADD:");
-            // TODO 18: Call AddToHashSet(uniqueNames) method
-            // Implement the AddToHashSet() method at bottom of file
+            
+            Console.WriteLine("\n2. HASHSET DISPLAY:");
+            // TODO: Call DisplayHashSet() method and pass the HashSet
+            DisplayHashSet(uniqueNames);
             
             Console.WriteLine("\n3. HASHSET COUNT & CONTAINS:");
-            // TODO 19: Call CheckHashSetCount(uniqueNames) method
-            // Implement the CheckHashSetCount() method at bottom of file
+            // TODO: Call CheckHashSetCount() method and pass the HashSet
+            CheckHashSetCount(uniqueNames);
+            
 
             Console.WriteLine("\n" + "=".PadRight(60, '='));
             Console.WriteLine("*** END OF HASHSET SECTION ***");
@@ -60,17 +64,18 @@ namespace CollectionsMasterApp
             Console.WriteLine("=".PadRight(60, '='));
             Console.WriteLine("Last-In-First-Out (LIFO) like a stack of plates");
 
-            Console.WriteLine("\n1. STACK CREATE:");
-            // TODO 20: Call CreateStack() method and store result in a variable
-            // Implement the CreateStack() method at bottom of file
+            Console.WriteLine("\n1. STACK CREATE & PUSH:");
+            // TODO: Create a Stack with initial data 
+            // Example: var numberStack = new Stack<int>(new[] {10, 20, 30});
+            var numberStack = new Stack<int>(new[] {10, 20, 30});            
             
-            Console.WriteLine("\n2. STACK PUSH:");
-            // TODO 21: Call PushToStack(stack) method
-            // Implement the PushToStack() method at bottom of file
+            Console.WriteLine("\n2. STACK DISPLAY:");
+            // TODO: Call DisplayStack() method and pass the Stack
+            DisplayStack(numberStack);
             
             Console.WriteLine("\n3. STACK POP:");
-            // TODO 22: Call PopFromStack(stack) method
-            // Implement the PopFromStack() method at bottom of file
+            // TODO: Call PopFromStack() method and pass the Stack
+            PopFromStack(numberStack);
 
             Console.WriteLine("\n" + "=".PadRight(60, '='));
             Console.WriteLine("*** END OF STACK SECTION ***");
@@ -83,15 +88,15 @@ namespace CollectionsMasterApp
             Console.WriteLine("First-In-First-Out (FIFO) like a line at a store");
 
             Console.WriteLine("\n1. QUEUE CREATE:");
-            // TODO 23: Call CreateQueue() method and store result in a variable
+            // TODO: Call CreateQueue() method and store result in a variable
             // Implement the CreateQueue() method at bottom of file
             
             Console.WriteLine("\n2. QUEUE ENQUEUE:");
-            // TODO 24: Call EnqueueToQueue(queue) method
+            // TODO: Call EnqueueToQueue(queue) method
             // Implement the EnqueueToQueue() method at bottom of file
             
             Console.WriteLine("\n3. QUEUE DEQUEUE:");
-            // TODO 25: Call DequeueFromQueue(queue) method
+            // TODO: Call DequeueFromQueue(queue) method
             // Implement the DequeueFromQueue() method at bottom of file
 
             Console.WriteLine("\n" + "=".PadRight(60, '='));
@@ -106,15 +111,15 @@ namespace CollectionsMasterApp
             Console.WriteLine("Key-value pairs kept automatically sorted by key");
 
             Console.WriteLine("\n1. SORTEDLIST CREATE:");
-            // TODO 26: Call CreateSortedList() method and store result in a variable
+            // TODO: Call CreateSortedList() method and store result in a variable
             // Implement the CreateSortedList() method at bottom of file
             
             Console.WriteLine("\n2. SORTEDLIST ADD:");
-            // TODO 27: Call AddToSortedList(sorted) method
+            // TODO: Call AddToSortedList(sorted) method
             // Implement the AddToSortedList() method at bottom of file
             
             Console.WriteLine("\n3. SORTEDLIST DISPLAY:");
-            // TODO 28: Call DisplaySortedList(sorted) method
+            // TODO: Call DisplaySortedList(sorted) method
             // Implement the DisplaySortedList() method at bottom of file
 
             Console.WriteLine("\n" + "=".PadRight(60, '='));
@@ -139,63 +144,60 @@ namespace CollectionsMasterApp
 
         // ============ HASHSET METHODS ============
 
-        private static HashSet<string> CreateHashSet()
+        private static void DisplayHashSet(HashSet<string> uniqueNames)
         {
-            // TODO: Create a HashSet of strings (automatically prevents duplicates)
-            // Example: HashSet<string> uniqueNames = new HashSet<string>();
-            // Then return uniqueNames;
-            
-            return null;
-        }
-
-        private static void AddToHashSet(HashSet<string> uniqueNames)
-        {
-            // TODO: Add "John", "Jane", and "John" again (watch the duplicate get ignored!)
-            // Example: uniqueNames.Add("John");
-            
             // TODO: Print all unique names using a foreach loop
-            // Example: foreach (string name in uniqueNames)
+            Console.WriteLine("Unique Names, no duplicates: ");
             
-            Console.WriteLine("Unique names in HashSet:");
+            foreach (string names in uniqueNames)
+            {
+                Console.WriteLine(names);
+            }
+            
+            // Notice: Even though "John" was added twice in the initializer, 
+            // HashSet automatically removed the duplicate!
+            
         }
 
         private static void CheckHashSetCount(HashSet<string> uniqueNames)
         {
-            // TODO: Print the count of unique names
-            // Example: Console.WriteLine($"Total unique names: {uniqueNames.Count}");
+            // TODO: Print the count of unique names using .Count property 
+            Console.WriteLine($"Number of unique names: {uniqueNames.Count}");
             
-            // TODO: Check if specific names exist using Contains
-            // Example: Console.WriteLine($"Contains John: {uniqueNames.Contains(\"John\")}");
             
+            // TODO: Check if specific names exist using Contains() method
+            // Example: Console.WriteLine($"Contains John: {uniqueNames.Contains("John")}");
+            // Example: Console.WriteLine($"Contains Bob: {uniqueNames.Contains("Bob")}");
+            Console.WriteLine($"Contains John: {uniqueNames.Contains("John")}");
+            Console.WriteLine($"Contains Bob: {uniqueNames.Contains("Bob")}");
         }
 
         // ============ STACK METHODS ============
 
-        private static Stack<int> CreateStack()
+        private static void DisplayStack(Stack<int> numberStack)
         {
-            // TODO: Create a Stack of integers (Last In, First Out - like a stack of plates)
-            // Example: Stack<int> stack = new Stack<int>();
-            // Then return stack;
+            // TODO: Display all items in the stack without removing them
+            // Example: Console.WriteLine("Stack contents (top to bottom):");
+            // Example: foreach (int number in numberStack)
+            // Example:     Console.WriteLine($"  {number}");
             
-            return null;
+            // Notice: Stack displays from top to bottom (30, 20, 10)
+            // The last item pushed (30) is at the top!
+            
         }
 
-        private static void PushToStack(Stack<int> stack)
-        {
-            // TODO: Push the numbers 10, 20, 30 onto the stack
-            // Example: stack.Push(10);
-            
-            Console.WriteLine("Pushed 10, 20, 30 onto stack");
-            Console.WriteLine($"Stack count: {stack.Count}");
-        }
-
-        private static void PopFromStack(Stack<int> stack)
+        private static void PopFromStack(Stack<int> numberStack)
         {
             Console.WriteLine("Popping from stack (LIFO order):");
             
-            // TODO: Pop all items while the stack has items (they come out in reverse order!)
-            // Example: while (stack.Count > 0)
-            // Example: int item = stack.Pop();
+            // TODO: Pop items one by one and display them
+            // Example: while (numberStack.Count > 0)
+            // Example: {
+            // Example:     int item = numberStack.Pop();
+            // Example:     Console.WriteLine($"Popped: {item}");
+            // Example: }
+            
+            // Notice: Items come out in reverse order (30, 20, 10)!
             
         }
 
